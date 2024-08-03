@@ -1,32 +1,36 @@
-# _Sample project_
+# ESP32-H2 BME280 Zigbee Sensor
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+This project is an implementation of an ESP32-H2 based air sensor that reads data from a BME280 sensor over I2C and publishes the data using Zigbee. The sensor data includes temperature, humidity, and pressure, and it can be easily integrated with HomeAssistant.
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+## Project Overview
 
+The project is based on the [esp32-h2-air-sensor](https://github.com/acha666/esp32-h2-air-sensor) and has been modified to work with the BME280 sensor and GPIOs 1 and 2 for I2C communication.
 
+## Features
 
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
+- Reads temperature, humidity, and pressure data from BME280 sensor.
+- Publishes sensor data over Zigbee.
+- Easy integration with HomeAssistant.
 
-## Example folder contents
+## Hardware Requirements
 
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
+- ESP32-H2
+- BME280 sensor
+- Connecting wires
 
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
+## Wiring Diagram
 
-Below is short explanation of remaining files in the project folder.
+ESP32-H2 Pin | BME280 Pin
+-------------|------------
+GPIO 1       | SDA
+GPIO 2       | SCL
+GND          | GND
+3.3V         | VCC
 
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+## Contributing
+
+Feel free to submit issues and pull requests. Contributions are welcome!
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
